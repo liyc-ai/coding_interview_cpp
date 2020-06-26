@@ -1,0 +1,43 @@
+#pragma once
+/*
+请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符"go"时，
+第一个只出现一次的字符是"g"。当从该字符流中读出前六个字符“google"时，第一个只出现一次的字符是"l"。
+如果当前字符流没有存在出现一次的字符，返回#字符。
+*/
+#include "headers.h"
+
+class Solution
+{
+public:
+    // brute-force search
+    struct node {
+        node(char in_ch):is_repeat(false), ch(in_ch) {};
+        bool is_repeat;
+        char ch;
+    };
+    //Insert one char from stringstream
+    void Insert(char ch)
+    {
+        struct node nNode(ch);
+        for (int i = 0; i < chs.size(); ++i)
+        {
+            if (chs[i].ch == ch)
+            {
+                chs[i].is_repeat = true;
+                return;
+            }
+        }
+        chs.push_back(nNode);
+    }
+    //return the first appearence once char in current stringstream
+    char FirstAppearingOnce()
+    {
+        for (int i = 0; i < chs.size(); ++i)
+        {
+            if (!chs[i].is_repeat) return chs[i].ch;
+        }
+        return '#';
+    }
+private:
+    vector<node> chs;
+};
