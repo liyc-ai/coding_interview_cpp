@@ -1,6 +1,6 @@
 《剑指offer》 C++个人参考题解
 
-题目链接：[牛客网](https://www.nowcoder.com/ta/coding-interviews) [leetcode](https://leetcode-cn.com/problemset/lcof/)
+题目链接：[牛客网](https://www.nowcoder.com/ta/coding-interviews) [leetcode](https://leetcode-cn.com/problemset/all/)
 
 #### 文件说明
 
